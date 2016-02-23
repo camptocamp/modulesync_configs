@@ -45,6 +45,7 @@ Gemfile:
       - gem: rspec-puppet-facts
       - gem: ruby-augeas
       - gem: github_changelog_generator
+        version: '< 1.11.0'
         condition: 'RUBY_VERSION !~ /^1\.8/'
       - gem: puppet-blacksmith
         condition: 'RUBY_VERSION !~ /^1\./'
