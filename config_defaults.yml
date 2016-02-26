@@ -5,7 +5,7 @@
     - bundle exec rake validate
     - bundle exec rake lint
     - bundle exec rake spec SPEC_OPTS='--format documentation'
-    - bundle exec rake metadata
+    - bundle exec rake metadata_lint
   forge_login: "camptocamp"
   includes:
   - rvm: 1.8.7
