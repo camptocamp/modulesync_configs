@@ -68,7 +68,7 @@ rescue Octokit::NotFound -%>
     dist: trusty
     services: docker
     env:
-      - BEAKER_set="<%= operatingsystem %>-<%= operatingsystemmajrelease %>"
+      - BEAKER_setfile=<%= operatingsystem %><%= operatingsystemmajrelease %>-64{hypervisor=docker}
       - BEAKER_PUPPET_COLLECTION=puppet5
     bundler_args:
     script: sudo service docker restart ; sleep 10 && bundle exec rspec spec/acceptance/<%= spec %>_spec.rb
