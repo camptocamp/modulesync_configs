@@ -65,7 +65,6 @@ rescue Octokit::NotFound -%>
                      @configs['acceptance'].each do |spec| -%>
   - rvm: default
     sudo: required
-    dist: trusty
     services: docker
     env:
       - PUPPET_INSTALL_TYPE=agent
