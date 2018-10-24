@@ -73,7 +73,7 @@ rescue Octokit::NotFound -%>
       - BEAKER_debug=true
       - BEAKER_setfile=<%= operatingsystem %><%= operatingsystemmajrelease %>-64{hypervisor=docker}
     bundler_args:
-    script: sudo service docker restart ; sleep 10 && bundle exec rspec spec/acceptance/<%= spec %>_spec.rb
+    script: bundle exec rspec spec/acceptance/<%= spec %>_spec.rb
 <%                   end  # each
                  end  # if
              end  # map
