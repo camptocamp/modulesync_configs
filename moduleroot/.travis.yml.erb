@@ -87,7 +87,6 @@ rescue Octokit::NotFound -%>
 <%- @configs['allow_failures'].each do |allow| -%>
     - rvm: <%= allow['rvm'] %>
       sudo: <%= allow['sudo'] %>
-      dist: <%= allow['dist'] %>
       services: <%= allow['services'] %>
       env: <%= allow['env'] %>
       bundler_args: <%= allow['bundler_args'] %>
