@@ -49,9 +49,9 @@ rescue Octokit::NotFound -%>
 <%     end
      end
    end -%>
-<% if File.file?("modules/#{@configs[:puppet_module]}/metadata.json")
+<% if File.file?("modules/camptocamp/#{@configs[:puppet_module]}/metadata.json")
      require 'json'
-     metadata = JSON.parse(File.read("modules/#{@configs[:puppet_module]}/metadata.json"))
+     metadata = JSON.parse(File.read("modules/camptocamp/#{@configs[:puppet_module]}/metadata.json"))
      if ! metadata['operatingsystem_support'].nil?
        operatingsystem_support = metadata['operatingsystem_support'].map { |o|
          o['operatingsystem'] = 'CentOS' if ['redhat', 'oraclelinux', 'scientific', 'amazon'].include? o['operatingsystem'].downcase
