@@ -41,8 +41,6 @@ Gemfile:
     ':system_tests':
       - gem: puppet-module-posix-system-r#{minor_version}
       - gem: beaker-hostgenerator
-        git: https://github.com/mcanevet/beaker-hostgenerator.git
-        branch: fix_debian9
 Rakefile:
   default_disabled_lint_checks:
     - 'relative'
