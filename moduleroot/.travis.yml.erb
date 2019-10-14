@@ -22,14 +22,9 @@ after_success:
 matrix:
   fast_finish: true
   include:
-<% require 'octokit'
-begin
-  Octokit::Client.new(:netrc => true).repo "camptocamp/#{@configs[:puppet_module]}"
-  @configs['includes'].each do |include| -%>
+<% @configs['includes'].each do |include| -%>
   - rvm: <%= include['rvm'] %>
     env: <%= include['env'] %>
-<% end
-rescue Octokit::NotFound -%>
 <% end -%>
 <% if @configs['extras']
      @configs['extras'].each do |extra| -%>
