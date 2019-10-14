@@ -8,15 +8,15 @@ require '<%= r %>'
 
 Rake::Task[:lint].clear
 PuppetLint::RakeTask.new :lint do |config|
-  config.ignore_paths = ["spec/**/*.pp", "pkg/**/*.pp", "vendor/**/*.pp"]
+  config.ignore_paths = ['spec/**/*.pp', 'pkg/**/*.pp', 'vendor/**/*.pp']
   config.disable_checks = ['140chars']
   config.fail_on_warnings = true
 end
 
-PuppetSyntax.exclude_paths = ["spec/fixtures/**/*.pp", "vendor/**/*"]
+PuppetSyntax.exclude_paths = ['spec/fixtures/**/*.pp', 'vendor/**/*']
 <% if @configs['metadata-json-lint_options']
   @configs['metadata-json-lint_options'].each do |k, v| -%>
-MetadataJsonLint::options[:<%= k %>] = <%= v %>
+MetadataJsonLint.options[:<%= k %>] = <%= v %>
 <% end
 end -%>
 
