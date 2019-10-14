@@ -37,6 +37,10 @@ Gemfile:
       - gem: rspec
       - gem: rspec-puppet
       - gem: rspec-puppet-facts
+      - gem: rubocop
+        version: '< 0.53.0'
+      - gem: rubocop-i18n
+      - gem: rubocop-rspec
       - gem: ruby-augeas
     ':system_tests':
       - gem: puppet-module-posix-system-r#{minor_version}
